@@ -31,7 +31,6 @@ export function infixToPostfix(expression) {
     postFix += operatorStack.pop() + " ";
   }
 
-  // console.log(operatorStack);
   return postFix;
 }
 
@@ -46,6 +45,3 @@ function getPrecedence(ch) {
     return 0;
   }
 }
-
-// const postFix = infixToPostfix('9464 / 91 + ( 926 * 50 - 9601 )');
-// console.log(postFix);

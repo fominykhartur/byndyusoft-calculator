@@ -34,5 +34,3 @@ export function RPNProcess(rpnExpression) {
 
   return e[0];
 }
-
-// console.log(RPN('1 2 4 2 / 2 3 ^ ^ * + 1 -'));
