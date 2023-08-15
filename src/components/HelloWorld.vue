@@ -9,100 +9,21 @@
         variant="outlined"
       ></v-text-field>
       <v-row justify="center">
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('(')"
-            >(</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp(')')"
-            >)</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('+')"
-            >+</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('-')"
-            >-</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('7')"
-            >7</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('8')"
-            >8</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('9')"
-            >9</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('*')"
-            >*</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('4')"
-            >4</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('5')"
-            >5</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('6')"
-            >6</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('/')"
-            >/</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('1')"
-            >1</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('2')"
-            >2</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('3')"
-            >3</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('^')"
-            >^</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('.')"
-            >.</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-btn block rounded="0" size="x-large" @click="addToExp('0')"
-            >0</v-btn
-          >
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
+        <template v-for="element of calcElements">
+          <v-col cols="12" sm="3" md="3">
+            <v-btn
+              block
+              rounded="0"
+              size="x-large"
+              @click="addToExp(element)"
+              >{{ element }}</v-btn
+            >
+          </v-col>
+        </template>
+        <v-col cols="12" sm="3" md="3">
           <v-btn block rounded="0" size="x-large" @click="remove">←</v-btn>
         </v-col>
-        <v-col cols="12" sm="6" md="3">
+        <v-col cols="12" sm="3" md="3">
           <v-btn block rounded="0" size="x-large" @click="calc">=</v-btn>
         </v-col>
       </v-row>
@@ -117,6 +38,26 @@ import { infixToPostfix } from "@/plugins/infixToPostifx.js";
 export default {
   data() {
     return {
+      calcElements: [
+        "(",
+        ")",
+        "+",
+        "-",
+        "7",
+        "8",
+        "9",
+        "*",
+        "4",
+        "5",
+        "6",
+        "/",
+        "1",
+        "2",
+        "3",
+        "^",
+        ".",
+        "0",
+      ],
       expStack: [],
       exp: "",
     };
