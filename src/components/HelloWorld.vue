@@ -20,10 +20,12 @@
             >
           </v-col>
         </template>
-        <v-col cols="12" sm="3" md="3">
+      </v-row>
+      <v-row>
+        <v-col cols="12" sm="6" md="6">
           <v-btn block rounded="0" size="x-large" @click="remove">←</v-btn>
         </v-col>
-        <v-col cols="12" sm="3" md="3">
+        <v-col cols="12" sm="6" md="6">
           <v-btn block rounded="0" size="x-large" @click="calc">=</v-btn>
         </v-col>
       </v-row>
@@ -84,6 +86,7 @@ export default {
         this.exp = RPNProcess(postfix);
         this.expStack = [];
       } catch (e) {
+        console.error(e);
         alert("Ошибка в выражение");
       }
     },

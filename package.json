@@ -1,24 +1,24 @@
 {
-  "name": "byndyusoft-calculator",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@mdi/font": "7.0.96",
-    "roboto-fontface": "*",
-    "vue": "^3.2.0",
-    "vuetify": "^3.0.0",
-    "webfontloader": "^1.0.0"
-  },
-  "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "jest": "^29.6.2",
-    "vite": "^4.2.0",
-    "vite-plugin-vuetify": "^1.0.0"
-  }
+    "name": "byndyusoft-calculator",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "jest --verbose"
+    },
+    "dependencies": {
+        "@mdi/font": "7.0.96",
+        "roboto-fontface": "*",
+        "vue": "^3.2.0",
+        "vuetify": "^3.0.0",
+        "webfontloader": "^1.0.0"
+    },
+    "devDependencies": {
+        "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "jest": "^29.6.2",
+        "vite": "^4.2.0",
+        "vite-plugin-vuetify": "^1.0.0"
+    }
 }
