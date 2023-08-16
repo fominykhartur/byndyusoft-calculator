@@ -67,9 +67,8 @@ export default {
   methods: {
     addToExp(s) {
       if (
-        (parseFloat(this.expStack[this.expStack.length - 1]) ||
-          parseFloat(this.expStack[this.expStack.length - 1]) === 0) &&
-        (parseFloat(s) || s === "0")
+        !isNaN(parseFloat(this.expStack[this.expStack.length - 1])) &&
+        !isNaN(parseFloat(s))
       ) {
         this.expStack[this.expStack.length - 1] =
           this.expStack[this.expStack.length - 1] + s;

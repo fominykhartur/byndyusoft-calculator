@@ -1,4 +1,4 @@
-import { RPNProcess } from "./RPN";
+import { RPNProcess } from "../src/plugins/RPN";
 
 describe("Тестирование функции вычисления выражения в ОПН", () => {
   describe("Проверка корректности вычислений", () => {
@@ -38,6 +38,9 @@ describe("Тестирование функции вычисления выра�
     });
     test("Пустое выражение должно выкинуть ошибку Calculation error", () => {
       expect(() => RPNProcess("")).toThrow("Calculation error");
+    });
+    test("* должна выкинуть Calculation error", () => {
+      expect(() => RPNProcess("*")).toThrow("Calculation error");
     });
   });
 });
