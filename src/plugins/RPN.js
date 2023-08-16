@@ -3,7 +3,7 @@ export function RPNProcess(rpnExpression) {
   let i = 0;
 
   while (e.length !== 1) {
-    console.log(e[i], i);
+    // console.log(e[i], i);
     if (e[i] === "") {
       e.splice(i, 1);
     } else if (e[i] === "+") {
@@ -37,10 +37,7 @@ export function RPNProcess(rpnExpression) {
     }
   }
 
-  console.log("result", e[0]);
-  console.log(!e[0] || isNaN(parseFloat(e[0])));
-  console.log(!e[0]);
-  console.log(isNaN(parseFloat(e[0])));
+  // console.log("result", e[0]);
   if (e.length !== 1 || isNaN(parseFloat(e[0]))) {
     throw new Error("Calculation error");
   }
