@@ -37,8 +37,11 @@ export function RPNProcess(rpnExpression) {
     }
   }
 
-  // console.log("result", e[0]);
-  if (!e[0] || isNaN(parseFloat(e[0]))) {
+  console.log("result", e[0]);
+  console.log(!e[0] || isNaN(parseFloat(e[0])));
+  console.log(!e[0]);
+  console.log(isNaN(parseFloat(e[0])));
+  if (e.length !== 1 || isNaN(parseFloat(e[0]))) {
     throw new Error("Calculation error");
   }
   return e[0];
